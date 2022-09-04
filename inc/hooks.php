@@ -6,6 +6,8 @@ namespace AbandonedBlocks;
 
 /**
  * Filter the query
+ * 
+ * @see https://developer.wordpress.org/reference/hooks/pre_get_posts/
  *
  * @param object $query
  * @return void
