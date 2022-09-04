@@ -1,0 +1,30 @@
+$colors: (
+	"black": #27241d,
+	"white": #fff,
+	"red": var(--wp--preset--color--red),
+	"background": var(--wp--preset--color--background),
+	"foreground": var(--wp--preset--color--foreground),
+    "background-dark": var(--wp--preset--color--background-dark),
+	"border": var(--wp--preset--color--foreground),
+	"shadow": rgba(244,207,174,1),
+);
+
+@function get-color($key) {
+	@return map-get($colors, $key);
+}
+
+@mixin color-utility($attribute: 'color') {
+
+	@each $name,
+	$hex in $colors {
+		&-#{$name}-#{$attribute} {
+			#{$attribute}: $hex;
+		}
+	}
+}
+
+.has {
+	@include color-utility();
+	@include color-utility('background-color');
+}
+

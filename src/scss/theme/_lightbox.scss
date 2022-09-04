@@ -1,0 +1,49 @@
+.fbx-modal {
+    .fbx-inner {
+        border-color: var(--wp--preset--color--background);
+        border-radius: 0;
+    }
+    .fbx-btn-transition {
+        background-color: var(--wp--preset--color--background);
+        border-radius: 0;
+        // box-shadow: 5px 0 30px 0 get-color(shadow) inset;
+
+        &:hover,
+        &:focus {
+            fill: var(--wp--preset--color--background-dark);
+        }
+
+        .fbx-icon {
+            fill: var(--wp--preset--color--foreground);
+
+            &:hover,
+            &:focus {
+                fill: var(--wp--preset--color--black);
+            }
+        }
+
+        &.fbx-close {
+            border-radius: 50%;
+        }
+    }
+
+    .fbx-rounded {}
+    .fbx-light {}
+
+    .fbx-item-current {
+        // @extend %frame;
+    }
+
+    .fbx-item-image {
+        border: 1px solid var(--wp--preset--color--foreground);
+        box-sizing: border-box;
+    }
+
+    .fbx-caption-title {
+        background-color: rgba( var(--wp--preset--color--foreground), .5 );
+        color: var(--wp--preset--color--background);
+        font-family: var(--wp--preset--font-family--heading);
+        text-transform: uppercase;
+        letter-spacing: .1rem;
+    }
+}

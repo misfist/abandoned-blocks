@@ -1,0 +1,30 @@
+.grid {
+	display: grid;
+	gap: var(--wp--custom--gap--horizontal);
+}
+
+@supports (grid-template-rows: masonry) {
+	.grid {
+		grid-template-rows: masonry;
+		align-tracks: start;
+		justify-tracks: start;
+	}
+}
+
+@media screen and (min-width: 520px) {
+	.grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (min-width: 840px) {
+	.grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media screen and (min-width: 1100px) {
+	.grid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
