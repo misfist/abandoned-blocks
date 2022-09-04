@@ -171,6 +171,16 @@ hr.wp-block-separator {
 	padding-top: 0;
 }
 
+.post-header {
+	justify-content: center;
+	
+	.post-title {
+		text-transform: uppercase;
+		border-bottom: 1px solid var( --wp--preset--color--foreground );
+		padding-bottom: 1rem;
+	}
+}
+
 .wp-block-query-pagination {
 	justify-content: center;
 
@@ -245,6 +255,8 @@ hr.wp-block-separator {
 
 	&.wp-block-post-template {
 		max-width: var( --wp--custom--layout--content-size );
+		margin-right: auto;
+		margin-left: auto;
 	}
 
 	.wp-block-post {

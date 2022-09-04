@@ -2,7 +2,11 @@
 
     <!-- wp:query {"query":{"offset":0,"postType":"post","categoryIds":[],"tagIds":[],"order":"desc","orderBy":"date","author":"","search":"","sticky":"","inherit":true},"className":"site-content wrapper"} -->
     <main class="wp-block-query site-content wrapper">
-        <!-- wp:query-title {"type":"archive","className":"post-header",tagName:"header"} /-->
+        <!-- wp:group {"tagName":"header","className":"post-header","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+        <header class="wp-block-group post-header">
+            <!-- wp:query-title {"type":"archive","textAlign":"center","className":"post-title"} /-->
+        </header>
+        <!-- /wp:group -->
 
         <!-- wp:post-template {"className":"grid post-list"} -->
             <!-- wp:group  {"className":"post-body"} -->
