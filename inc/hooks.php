@@ -18,7 +18,7 @@ function query_posts( object $query ) {
 	}
 	if ( \is_home() ) {
 		$query->set( 'posts_per_page', \get_option( 'posts_per_page', 24 ) );
-		$query->set( 'ignore_sticky_posts', false );
+		// $query->set( 'ignore_sticky_posts', false );
 		$query->set( 'post_type', array( 'post' ) );
 		$query->set( 'orderby', 'date' );
 		$query->set( 'order', 'DESC' );
