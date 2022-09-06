@@ -56,9 +56,15 @@ function fonts_url() {
  * Enqueue scripts and styles.
  */
 function enqueue_scripts() {
-	// Enqueue Google fonts
+	global $post;
+
 	\wp_enqueue_style( 'abandoned-fonts', fonts_url(), array(), null );
 	\wp_dequeue_style( 'blockbase-ponyfill' );
+
+	if ( is_a( $post, 'WP_Post' ) && has_shortcode( $post->post_content, 'contact-form-7' ) ) {
+		wp_enqueue_style( 'dashicons' );
+	}
+
 	\wp_enqueue_style( 'abandoned-styles', \get_stylesheet_directory_uri() . '/build/index.css', array(), \wp_get_theme()->get( 'Version' ) );
 	\wp_enqueue_script( 'abandoned-scripts', \get_stylesheet_directory_uri() . '/build/index.js', array(), \wp_get_theme()->get( 'Version' ), true );
 }
