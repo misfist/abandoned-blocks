@@ -1,12 +1,26 @@
 $colors: (
-	"black": #27241d,
-	"white": #fff,
+	"black": var(--wp--preset--color--black),
+	"white": var(--wp--preset--color--white),
 	"red": var(--wp--preset--color--red),
 	"background": var(--wp--preset--color--background),
 	"foreground": var(--wp--preset--color--foreground),
     "background-dark": var(--wp--preset--color--background-dark),
 	"border": var(--wp--preset--color--foreground),
 	"shadow": rgba(244,207,174,1),
+);
+
+$fonts: (
+	'heading': var(--wp--preset--font-family--heading),
+	'subheading': var(--wp--preset--font-family--suheading),
+	'body': var(--wp--preset--font-family--body)
+);
+
+$font-sizes: (
+	'small': var(--wp--preset--font-size--small),
+	'default': var(--wp--preset--font-size--default),
+	'medium': var(--wp--preset--font-size--medium),
+	'large': var(--wp--preset--font-size--large),
+	'x-large': var(--wp--preset--font-size--x-large)
 );
 
 @function get-color($key) {
