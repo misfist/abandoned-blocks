@@ -1,0 +1,31 @@
+input,
+textarea,
+.label-file {
+	border: 1px solid var(--wp--preset--color--foreground);
+	font-family: var(--wp--preset--font-family--heading);
+	font-size: var(--wp--preset--font-size--default);
+	padding: .25rem .5rem;
+	background-color: rgba(244,207,174,.25);
+
+    &[type="submit"] {
+        background-color: var(--wp--preset--color--foreground);
+        color: var(--wp--preset--color--background);
+        padding: .5rem .75rem;
+        display: inline-flex;
+    }
+    
+    &[type="file"] {
+        display: none;
+    }
+}
+
+.label-file {
+	cursor: pointer;
+	display: inline-flex;
+}
+
+.label {
+    + p {
+        margin-top: 0;
+    }
+}
