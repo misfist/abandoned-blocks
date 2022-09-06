@@ -126,8 +126,13 @@
 			"fontSizes": [
 				{
 					"name": "Small",
-					"size": "1rem",
+					"size": ".85rem",
 					"slug": "small"
+				},
+				{
+					"name": "Default",
+					"size": "1rem",
+					"slug": "default"
 				},
 				{
 					"name": "Medium",
