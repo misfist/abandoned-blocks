@@ -99,11 +99,12 @@ function abandoned_blocks_render_post_featured_image( $attributes, $content, $bl
 	}
 	$post_ID = $block->context['postId'];
 
-	$is_lightbox = isset( $attributes['isLightbox'] ) && $attributes['isLightbox'];
-	$is_link     = isset( $attributes['isLink'] ) && $attributes['isLink'];
-	$size_slug   = isset( $attributes['sizeSlug'] ) ? $attributes['sizeSlug'] : 'post-thumbnail';
-	$post_title  = trim( strip_tags( \get_the_title( $post_ID ) ) );
-	$attr        = array();
+	$show_caption = isset( $attributes['showCaption'] ) && $attributes['showCaption'];
+	$is_lightbox  = isset( $attributes['isLightbox'] ) && $attributes['isLightbox'];
+	$is_link      = isset( $attributes['isLink'] ) && $attributes['isLink'];
+	$size_slug    = isset( $attributes['sizeSlug'] ) ? $attributes['sizeSlug'] : 'post-thumbnail';
+	$post_title   = trim( strip_tags( \get_the_title( $post_ID ) ) );
+	$attr         = array();
 
 	if ( $is_link ) {
 		$attr['alt'] = $post_title;
