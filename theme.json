@@ -152,7 +152,7 @@
 			],
 			"fontFamilies": [
 				{
-					"fontFamily": "\"Overpass\", sans-serif",
+					"fontFamily": "'Overpass', sans-serif",
 					"slug": "heading",
 					"name": "Heading",
 					"fontFace": [
@@ -175,7 +175,7 @@
 					]
 				},
 				{
-					"fontFamily": "\"Bodoni Moda\", sans-serif",
+					"fontFamily": "'Bodoni Moda', sans-serif",
 					"slug": "subheading",
 					"name": "Subheading",
 					"fontFace": [
@@ -198,7 +198,7 @@
 					]
 				},
 				{
-					"fontFamily": "\"Old Standard TT\", sans-serif",
+					"fontFamily": "'Old Standard TT', sans-serif",
 					"slug": "body",
 					"name": "Body",
 					"fontFace": [
