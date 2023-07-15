@@ -99,11 +99,12 @@ function abandoned_blocks_render_post_featured_image( $attributes, $content, $bl
 	}
 	$post_ID = $block->context['postId'];
 
-	$is_lightbox = isset( $attributes['isLightbox'] ) && $attributes['isLightbox'];
-	$is_link     = isset( $attributes['isLink'] ) && $attributes['isLink'];
-	$size_slug   = isset( $attributes['sizeSlug'] ) ? $attributes['sizeSlug'] : 'post-thumbnail';
-	$post_title  = trim( strip_tags( \get_the_title( $post_ID ) ) );
-	$attr        = array();
+	$show_caption = isset( $attributes['showCaption'] ) && $attributes['showCaption'];
+	$is_lightbox  = isset( $attributes['isLightbox'] ) && $attributes['isLightbox'];
+	$is_link      = isset( $attributes['isLink'] ) && $attributes['isLink'];
+	$size_slug    = isset( $attributes['sizeSlug'] ) ? $attributes['sizeSlug'] : 'post-thumbnail';
+	$post_title   = trim( strip_tags( \get_the_title( $post_ID ) ) );
+	$attr         = array();
 
 	if ( $is_link ) {
 		$attr['alt'] = $post_title;
@@ -113,19 +114,27 @@ function abandoned_blocks_render_post_featured_image( $attributes, $content, $bl
 	if ( ! $featured_image ) {
 		return '';
 	}
+
+	if ( $show_caption && ( $caption = \get_the_post_thumbnail_caption( $post_ID ) ) ) {
+		$figcaption = sprintf( '<figcaption class="post-media-caption">%s</figcaption>', \wp_kses_post( $caption ) );
+	} else {
+		$figcaption = '';
+	}
+
 	$wrapper_attributes = \get_block_wrapper_attributes();
 	if ( $is_link ) {
-		$link_target        = ! empty( $attributes['linkTarget'] ) ? ' target="' . esc_attr( $attributes['linkTarget'] ) . '"' : '';
-		$rel                = $is_lightbox ? 'rel="gallery"' : '';
-		
+		$link_target = ! empty( $attributes['linkTarget'] ) ? ' target="' . esc_attr( $attributes['linkTarget'] ) . '"' : '';
+		$rel         = $is_lightbox ? 'rel="gallery"' : '';
+
 		$featured_image_src = \get_the_post_thumbnail_url( $post_ID, 'full', $attr );
 		$featured_image     = sprintf(
-			'<a href="%1$s" target="%2$s" %3$s%4$s>%5$s</a>',
+			'<a href="%1$s" target="%2$s" %3$s%4$s>%5$s</a>%6$s',
 			$is_lightbox ? $featured_image_src : \get_the_permalink( $post_ID ),
 			\esc_attr( $link_target ),
 			$rel,
-			$is_lightbox ? ' class="foobox"' : '',
-			$featured_image
+			$is_lightbox ? ' class="foobox post-media-link"' : 'post-media-link',
+			$featured_image,
+			$figcaption
 		);
 	}
 

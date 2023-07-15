@@ -284,10 +284,16 @@ hr.wp-block-separator {
 		margin: 0;
 	}
 
-	.post-media {
+	.post-media-link {
 		@extend %frame;
 		margin-top: 0;
 		margin-bottom: .5rem;
+	}
+
+	figcaption {
+		font-size: var(--wp--preset--font-size--small);
+		line-height: 1.1;
+		margin-bottom: .25rem;
 	}
 
 	.post-content {
